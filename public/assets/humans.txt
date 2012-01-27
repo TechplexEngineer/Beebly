@@ -1,0 +1,11 @@
+/* TEAM */
+    Chief Engineer: Blake Bourque
+    Contact: techwizworld.net/contact.html
+
+/* SITE */
+    Language:English / PHP
+    Doctype:HTML5
+    IDE:Netbeans
+
+/* THANKS */
+    Beebly is based on the FuelPHP Framework. (http://fuelphp.com/)

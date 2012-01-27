@@ -9,7 +9,7 @@
  * @package  app
  * @extends  Controller
  */
-class Controller_Welcome extends Controller
+class Controller_Welcome extends Controller_Template 
 {
 
 	/**
@@ -18,9 +18,16 @@ class Controller_Welcome extends Controller
 	 * @access  public
 	 * @return  Response
 	 */
+	
 	public function action_index()
 	{
-		return Response::forge(View::forge('welcome/index'));
+		$view = View::forge('welcome/index');
+
+		//$view->posts = Model_Post::find('all');
+
+		$this->template->ptitle = 'FuelPHP Framework';
+		$this->template->content = $view;
+		//return Response::forge(View::forge('welcome/index'));
 	}
 
 	/**
@@ -43,6 +50,14 @@ class Controller_Welcome extends Controller
 	 */
 	public function action_404()
 	{
-		return Response::forge(ViewModel::forge('welcome/404'), 404);
+		$view = View::forge('404');
+		$view->title = 'Error 404 - Page not found';
+		$view->subTitle = static::view();
+		return Response::forge($view, 404);
+	}
+	protected static function view()
+	{
+		$messages = array('Aw, crap!', 'Bloody Hell!', 'Uh Oh!', 'Nope, not here.', 'Huh?');
+		return $messages[array_rand($messages)];
 	}
 }

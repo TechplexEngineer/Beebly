@@ -41,7 +41,7 @@ return array(
 	 *
 	 * Set this to false or remove if you using mod_rewrite.
 	 */
-	'index_file'  => 'index.php',
+	'index_file'  => '',//'index.php',
 
 	'profiling'  => false,
 
@@ -136,6 +136,7 @@ return array(
 			'Fuel\\Core\\Response',
 			'Fuel\\Core\\View',
 			'Fuel\\Core\\ViewModel',
+			'Fuel\Core\Validation',
 			'Closure',
 		)
 	),
@@ -185,7 +186,8 @@ return array(
 		 * );
 		 */
 		'packages'  => array(
-			//'orm',
+		    'orm',
+		    'auth'
 		),
 
 		/**
@@ -211,7 +213,7 @@ return array(
 		 * add it like 'session' => 'auth'.
 		 * If you don't want the config in a group use null as groupname.
 		 */
-		'config'  => array(),
+		'config'  => array('beebly'),
 
 		/**
 		 * Language files to autoload
